@@ -10,6 +10,9 @@ int check_cycle(listint_t *list)
 {
 	listint_t *normal, *fast;
 
+	if (list == NULL || list->next == NULL)
+		return (0);
+
 	normal = list->next;
 	fast = list->next->next;
 
