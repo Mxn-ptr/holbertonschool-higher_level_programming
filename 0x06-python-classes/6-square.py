@@ -3,12 +3,12 @@ from ctypes import sizeof
 
 
 class Square:
-    '''
+    """
     Define a classe Square
     Private instance attribute : size (int)
         - property def size(self)
         - property setter def size(self, value)
-    '''
+    """
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position
@@ -38,15 +38,15 @@ class Square:
         if not all(val >= 0 for val in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
-    '''
+    """
     Public instance method : returns the current square area
-    '''
+    """
     def area(self):
         return (self.__size * self.__size)
 
-    '''
+    """
     Public instance method : print the square with position
-    '''
+    """
     def my_print(self):
         if self.__size == 0:
             print("")
