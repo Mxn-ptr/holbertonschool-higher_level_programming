@@ -4,7 +4,7 @@
 
 
 class Square:
-    """ 
+    """
     Define a classe Square
 
     Attribute:
