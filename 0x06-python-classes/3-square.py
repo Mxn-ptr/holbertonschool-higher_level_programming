@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+
+
+" Define a ckass Square Empty "
+
+
 class Square:
     """
     Define a classe Square
-    Private instance attribute : size (int)
+
+    Attribute:
+        size (int): size of the square
     """
     def __init__(self, size=0):
         if not isinstance(size, int):
