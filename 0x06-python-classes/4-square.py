@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-" Define a ckass Square Empty "
+" Define a class Square Empty "
 
 
 class Square:
