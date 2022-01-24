@@ -5,6 +5,7 @@
 
 class Rectangle:
     """ Represent a Rectangle """
+
     def __init__(self, width=0, height=0):
         """ Init function:
             Args:
