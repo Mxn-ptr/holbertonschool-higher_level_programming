@@ -7,7 +7,7 @@ Define a print square function
 
 def print_square(size):
     """ Function: print_square
-        Args: 
+        Args:
             size (int): size of the square
         Raises:
             TypeError: if size is not an int
