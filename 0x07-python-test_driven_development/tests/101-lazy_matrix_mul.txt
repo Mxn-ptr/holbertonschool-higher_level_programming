@@ -1,0 +1,16 @@
+================================
+The ``101-lazy_matrix_mul.txt`` module
+================================
+
+Using ``lazy_matrix_mul``
+---------------------
+
+Import the function:
+
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Test it:
+
+	>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+	[[ 7 10]
+	 [15 22]]
