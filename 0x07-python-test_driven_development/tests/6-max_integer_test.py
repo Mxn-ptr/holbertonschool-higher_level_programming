@@ -42,4 +42,3 @@ class TestMaxInteger(unittest.TestCase):
 
 if __name__ == '__main___':
     unittest.main()
-
