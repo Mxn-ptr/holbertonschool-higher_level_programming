@@ -37,8 +37,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def only_one_element(self):
         """ Test with one element """
-        list = [9]
-        self.assertEqual(max_integer(list), 9)
+        list_of_one_element = [9]
+        self.assertEqual(max_integer(list_of_one_element), 9)
 
 if __name__ == '__main___':
     unittest.main()
