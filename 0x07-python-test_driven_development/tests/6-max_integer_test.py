@@ -20,6 +20,22 @@ class TestMaxInteger(unittest.TestCase):
         list = []
         self.assertEqual(max_integer(list), None)
 
+    def max_at_the_beginning(self):
+        list = [98, 34, 17, 6, 18]
+        self.assertEqual(max_integer(list), 98)
+
+    def one_negative_number(self):
+        list = [12, 76, 5, -34, 67]
+        self.assertEqual(max_integer(list), 76)
+
+    def only_negative_numbers(self):
+        list = [-2, -95, -45, -18, -33]
+        self.assertEqual(max_integer(list), -95)
+
+    def only_one_element(self):
+        list = [9]
+        self.assertEqual(max_integer(list), 9)
+
 if __name__ == '__main___':
     unittest.main()
 
