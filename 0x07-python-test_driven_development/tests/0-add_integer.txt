@@ -74,3 +74,8 @@ With strings:
 	Traceback (most recent call last):
 	OverflowError: cannot convert float infinity to integer
 
+	>>> add_integer(None, 4)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+
