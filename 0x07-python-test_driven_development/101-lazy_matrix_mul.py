@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import numpy
 
 """ Define a function for multiplicate matrix """
+import numpy
 
 
 def lazy_matrix_mul(m_a, m_b):
