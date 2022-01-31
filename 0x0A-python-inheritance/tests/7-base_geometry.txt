@@ -1,0 +1,70 @@
+============================
+The ``7-base_geometry.txt`` module
+============================
+
+Using the class ``BaseGeometry``
+--------------------------
+
+Import the class:
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Now test it:
+
+	>>> bg = BaseGeometry()
+	>>> type(bg)
+	<class '7-base_geometry.BaseGeometry'>
+
+	>>> bg = BaseGeometry(None)
+	Traceback (most recent call last):
+	TypeError: BaseGeometry() takes no arguments
+
+Test the area() function:
+
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+Now test the integer_validator(self, name, value):
+
+With valid integers (do nothing):
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("test", 1)
+
+But if ``value`` is not a int:
+
+	>>> bg.integer_validator("test", None)
+	Traceback (most recent call last):
+	TypeError: test must be an integer
+
+	>>> bg.integer_validator("test", 1.2)
+	Traceback (most recent call last):
+	TypeError: test must be an integer
+
+	>>> bg.integer_validator("test", "Hello")
+	Traceback (most recent call last):
+	TypeError: test must be an integer
+
+	>>> bg.integer_validator("test", True)
+	Traceback (most recent call last):
+	TypeError: test must be an integer
+
+	>>> bg.integer_validator("test", [1, 2])
+	Traceback (most recent call last):
+	TypeError: test must be an integer
+
+	>>> bg.integer_validator("test", {1, 2})
+	Traceback (most recent call last):
+	TypeError: test must be an integer
+
+And if ``value`` is 0 or less:
+
+	>>> bg.integer_validator("test", -7)
+	Traceback (most recent call last):
+	ValueError: test must be greater than 0
+
+	>>> bg.integer_validator("test", 0)
+	Traceback (most recent call last):
+	ValueError: test must be greater than 0

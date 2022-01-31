@@ -1,0 +1,86 @@
+============================
+The ``1-my_list.txt`` module
+============================
+
+Using the class ``MyList``
+--------------------------
+
+Import the class:
+
+	>>> MyList = __import__('1-my_list').MyList
+
+Now test it:
+
+	>>> list = MyList()
+	>>> type(list)
+	<class '1-my_list.MyList'>
+
+	>>> list = MyList()
+	>>> print(list)
+	[]
+
+	>>> list = MyList([-1, 1, 2])
+	>>> print(list)
+	[-1, 1, 2]
+
+	>>> list = MyList(["Hello", "World"])
+	>>> print(list)
+	['Hello', 'World']
+
+	>>> list = MyList([1, "Hello"])
+	>>> print(list)
+	[1, 'Hello']
+
+	>>> list = MyList()
+	>>> list.append(2)
+	>>> list.append(6)
+	>>> list.append(9)
+	>>> print(list)
+	[2, 6, 9]
+
+	>>> list = MyList()
+	>>> list.append(2)
+	>>> list.append(6)
+	>>> list.append(9)
+	>>> list.remove(6)
+	>>> print(list)
+	[2, 9]
+
+	>>> list = MyList(1, 2)
+	Traceback (most recent call last):
+	TypeError: list expected at most 1 argument, got 2
+
+Test the print_sorted function:
+
+With nothing:
+
+	>>> list = MyList()
+	>>> list.print_sorted()
+	[]
+
+with integers:
+
+	>>> list = MyList()
+	>>> list.append(1)
+	>>> list.append(7)
+	>>> list.append(10)
+	>>> list.append(-3)
+	>>> list.append(2)
+	>>> list.print_sorted()
+	[-3, 1, 2, 7, 10]
+
+With strings:
+	
+	>>> list = MyList(["Hello", "World", "Holberton", "School"])
+	>>> print(list)
+	['Hello', 'World', 'Holberton', 'School']
+	>>> list.print_sorted()
+	['Hello', 'Holberton', 'School', 'World']
+
+With integers and strings:
+
+	>>> list = MyList([1, "Hello", "World", 2])
+	>>> list.print_sorted()
+	Traceback (most recent call last):
+	TypeError: '<' not supported between instances of 'str' and 'int'
+
