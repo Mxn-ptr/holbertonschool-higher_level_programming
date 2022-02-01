@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """ Define a class Student """
 import json
 
@@ -5,7 +7,7 @@ import json
 class Student:
     """ Represents a Student """
     def __init__(self, first_name, last_name, age):
-        """ Initialize a student 
+        """ Initialize a student
         Args:
             first_name (str): first name of the student
             last_name (str): last name of the student
@@ -15,7 +17,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """ Returns the dictionary description 
+        """ Returns the dictionary description
             Arg:
                 - attrs : list of attributes """
         my_dict = dict()

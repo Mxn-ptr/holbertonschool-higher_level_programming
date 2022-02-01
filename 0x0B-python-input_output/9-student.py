@@ -7,7 +7,7 @@ import json
 class Student:
     """ Represents a Student """
     def __init__(self, first_name, last_name, age):
-        """ Initialize a student 
+        """ Initialize a student
         Args:
             first_name (str): first name of the student
             last_name (str): last name of the student
