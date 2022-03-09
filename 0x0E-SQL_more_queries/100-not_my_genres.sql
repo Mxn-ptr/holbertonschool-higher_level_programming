@@ -1,6 +1,6 @@
 -- Use the hbtn_0d_tvshows database to list all genres not linked to the show Dexter
 SELECT `name`
-FROM `tv_genres` as p
+FROM `tv_genres`
 WHERE `name` NOT IN
 	(SELECT `name`
 	 FROM `tv_genres`
