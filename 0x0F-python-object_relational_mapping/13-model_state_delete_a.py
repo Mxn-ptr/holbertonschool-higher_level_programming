@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# Module for task 13
-# Deletes State with a name containing the letter a
+""" Module for task 13
+Deletes State with a name containing the letter a"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import State
