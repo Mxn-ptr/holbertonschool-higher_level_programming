@@ -14,13 +14,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    flag = False
     for state in session.query(State).order_by(State.id):
         if state.name == sys.argv[4]:
             print("{}".format(state.id))
             flag = True
             break
-        else:
-            flag = False
     if flag is False:
         print("Not found")
 
