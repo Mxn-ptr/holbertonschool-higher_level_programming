@@ -2,7 +2,7 @@
 """ Module for task 13 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
+from model_state import State
 import sys
 
 
@@ -14,9 +14,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State):
-        if "a" in state.name:
-            session.delete(state)
+    for state in session.query(State).filter(State.name.like('%a')):
+        session.delete(state)
     session.commit()
 
     session.close()
