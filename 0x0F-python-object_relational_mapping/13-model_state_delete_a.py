@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-""" Module for task 13 """
+# Module for task 13
+# Deletes State with a name containing the letter a
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
+from model_state import State
 import sys
 
 
@@ -18,3 +19,5 @@ if __name__ == "__main__":
         if "a" in state.name:
             session.delete(state)
     session.commit()
+
+    session.close()
