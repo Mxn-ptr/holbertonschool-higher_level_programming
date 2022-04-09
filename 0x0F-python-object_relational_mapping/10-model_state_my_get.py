@@ -6,21 +6,22 @@ from model_state import Base, State
 import sys
 
 
-engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
-                       .format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                       pool_pre_ping=True)
-engine.connect()
-Session = sessionmaker(bind=engine)
-session = Session()
+if __name__ == "__main__":
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
+    engine.connect()
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-for state in session.query(State).order_by(State.id):
-    if state.name == sys.argv[4]:
-        print("{}".format(state.id))
-        flag = True
-        break
-    else:
-        flag = False
-if flag is False:
-    print("Not found")
+    for state in session.query(State).order_by(State.id):
+        if state.name == sys.argv[4]:
+            print("{}".format(state.id))
+            flag = True
+            break
+        else:
+            flag = False
+    if flag is False:
+        print("Not found")
 
-session.close()
+    session.close()

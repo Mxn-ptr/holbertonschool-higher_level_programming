@@ -6,7 +6,9 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class City(Base):
+    """ Represents a City """
     __tablename__ = "cities"
     id = Column(Integer, autoincrement=True, unique=True,
                 nullable=False, primary_key=True)
