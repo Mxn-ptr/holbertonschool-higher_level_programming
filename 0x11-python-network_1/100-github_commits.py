@@ -7,10 +7,11 @@ import sys
 if __name__ == "__main__":
     r = requests.get("https://api.github.com/repos/{}/{}/commits"
                      .format(sys.argv[1], sys.argv[2]))
-    if r.status_code >= 400:
-        print("None")
-    else:
-        for commit in r.json()[:10]:
-            print("{}: {}".format(commit.get("sha"),
-                                  commit.get("commit")
+    commits = r.json()
+    try:
+        for i in range(10):
+            print("{}: {}".format(commits[i].get("sha"),
+                                  commits[i].get("commit")
                                   .get("author").get("name")))
+    except IndexError:
+        pass
