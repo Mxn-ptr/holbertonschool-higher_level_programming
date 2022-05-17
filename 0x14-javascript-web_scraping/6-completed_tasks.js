@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const axios = require('axios');
 
-axios.get('https://jsonplaceholder.typicode.com/todos')
+axios.get(process.argv[2])
   .then(function (response) {
     const user = {};
     for (let i = 0; i < response.data.length; i++) {
