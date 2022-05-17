@@ -5,9 +5,14 @@ let count = 0;
 axios.get('https://swapi-api.hbtn.io/api/films')
   .then(function (response) {
     for (let i = 0; i < response.data.results.length; i++) {
-      if (response.data.results[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-        count++;
+      for (let j = 0; j < response.data.results[i].characters.length; j++) {
+        if (response.data.results[i].characters[j].includes('/18/') === true) {
+          count++;
+        }
       }
     }
     console.log(count);
+  })
+  .catch(function (error) {
+    console.log(error);
   });
